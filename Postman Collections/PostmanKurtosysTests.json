@@ -86,7 +86,11 @@
 								"exec": [
 									"pm.test(\"Server header has a value of 'Cloudflare'\", function () {\r",
 									"    pm.expect(pm.response.headers.get(\"Server\")).to.include(\"cloudflare\");\r",
-									"});"
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"bfbdbdf"
 								],
 								"type": "text/javascript",
 								"packages": {}

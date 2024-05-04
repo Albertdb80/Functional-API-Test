@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "d23a5420-0968-4747-9dbd-0293981ea6ee",
+		"name": "Kurtosys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tests",
+			"item": [
+				{
+					"name": "Add an assertion that the response status received was “200”",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6a7472a7-e82d-4f56-b8f1-966497b1c4c7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3c113ee4-14ef-4b92-aa24-1efcb02b170c",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "3fab4a9e-3b60-4d5e-afd7-93858af7a41a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://www.kurtosys.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Add an assertion to ensure that the response time is less than 2 seconds",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "176fb739-9763-4a66-93b4-aba51069da82",
+								"exec": [
+									"pm.test(\"Response time is less than 2 seconds\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000); // Response time is in milliseconds, so 2000 milliseconds = 2 seconds\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "05c8ffcd-69c3-451b-8b32-ed1bdc595139",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://www.kurtosys.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Add an assertion for the server header having a value of Cloudflare",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dba3d8e3-980e-4e5a-aadb-b01ac6518399",
+								"exec": [
+									"pm.test(\"Server header has a value of 'Cloudflare'\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Server\")).to.include(\"cloudflare\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "484f8537-7c3f-4ad4-af79-114399c31837",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://www.kurtosys.com"
+					},
+					"response": []
+				}
+			],
+			"id": "c9e10b61-0177-46f8-98d6-57ee4677e860"
+		}
+	]
+}
